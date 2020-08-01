@@ -75,7 +75,7 @@ def validate_letters(letters: List[str]) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Solve the NYT Spelling Bee game")
-    parser.add_argument("letters", type=str, nargs=7, help="The seven etters in 'hive'. The first letter should be the center letter.")
+    parser.add_argument("letters", type=str, nargs=7, help="The seven letters in the 'hive'. The first letter should be the center letter.")
     args = parser.parse_args()
     validate_letters(args.letters)
     main(args.letters)
