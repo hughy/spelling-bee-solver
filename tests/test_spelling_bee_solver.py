@@ -6,7 +6,7 @@ from spelling_bee_solver import trie
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert __version__ == "0.1.0"
 
 
 def test_get_dictionary():

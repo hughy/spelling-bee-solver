@@ -89,5 +89,5 @@ def insert(trie: Node, word: str) -> None:
     head, tail = word[:1], word[1:]
     if head not in trie:
         trie[head] = {}
-    
+
     insert(trie[head], tail)

@@ -37,7 +37,7 @@ def solve(letters: List[str], dictionary: trie.Node) -> List[str]:
             words.add(candidate)
         if is_prefix:
             queue.extend([candidate + letter for letter in letters])
-    
+
     return list(words)
 
 
@@ -50,7 +50,7 @@ def get_dictionary() -> trie.Node:
             word = line.strip()
             if len(word) >= 4:
                 trie.insert(dictionary, word)
-            
+
     return dictionary
 
 
@@ -75,7 +75,14 @@ def validate_letters(letters: List[str]) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Solve the NYT Spelling Bee game")
-    parser.add_argument("letters", type=str, nargs=7, help="The seven letters in the 'hive'. The first letter should be the center letter.")
+    parser.add_argument(
+        "letters",
+        type=str,
+        nargs=7,
+        help="""
+        The seven letters in the 'hive'. The first letter should be the letter
+        from the center of the 'hive'.""".strip(),
+    )
     args = parser.parse_args()
     validate_letters(args.letters)
     main(args.letters)
